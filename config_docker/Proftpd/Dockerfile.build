@@ -1,0 +1,14 @@
+FROM internet/centos:7.6.1810
+
+RUN yum install -y epel-release 
+RUN yum install -y proftpd 
+
+RUN yum clean all
+
+RUN mkdir -p /opt/filetransfert/ssl
+
+COPY proftpd.conf /opt/filetransfert/
+
+
+
+

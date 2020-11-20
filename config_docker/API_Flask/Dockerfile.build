@@ -1,0 +1,21 @@
+FROM internet/centos:7.6.1810
+
+RUN yum install -y wget
+
+RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+
+RUN yum install -y python36u python36u-devel python36u-pip
+
+COPY . /app
+
+RUN mkdir -p /opt/filetransfert/
+
+WORKDIR /app
+
+
+
+RUN python3.6 -m pip install -r requirements.txt
+
+
+
+

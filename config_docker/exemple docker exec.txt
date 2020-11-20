@@ -1,0 +1,12 @@
+
+docker exec $1 mkdir -p /opt/dossier/utilisateur/
+docker exec $1 adduser utilisateur -d /opt/dossier/utilisateur/ -M
+
+//pour la ligne ci dessous il faut voir s'il faut mettre ou non des '' pour mdp et utilisateur
+docker exec $1 sh -c "echo mdp | passwd --stdin utilisateur"
+
+docker exec $1 mkdir -p     /opt/dossier/utilisateur/ /opt/dossier/utilisateur/RECUS /opt/dossier/utilisateur/ENVOYES /opt/dossier/utilisateur/ERREUR /opt/dossier/utilisateur/NON_TRANSMIS
+
+docker exec $1 chown utilisateur:utilisateur  /opt/dossier/utilisateur/ /opt/dossier/utilisateur/RECUS /opt/dossier/utilisateur/ENVOYES /opt/dossier/utilisateur/ERREUR /opt/dossier/utilisateur/NON_TRANSMIS
+
+docker exec $1 chmod 700    /opt/dossier/utilisateur/ /opt/dossier/utilisateur/RECUS /opt/dossier/utilisateur/ENVOYES /opt/dossier/utilisateur/ERREUR /opt/dossier/utilisateur/NON_TRANSMIS

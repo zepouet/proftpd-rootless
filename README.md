@@ -6,7 +6,7 @@ ProFTPd container provides active ftp and scripts for user management.
 ## Instant Usage
 
 ~~~~
-docker run -d -p 42042:21 --name="proftp_proftp_1" blacklabelops/proftp
+docker run -d -p 42042:21 --name="proftp_proftp_1" zepouet/proftp
 ~~~~
 
 > FTP will be available on port 42042.
